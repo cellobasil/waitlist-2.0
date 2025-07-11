@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -13,7 +12,7 @@ const PhLanding = () => {
   const handleHeroSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       await fetch('/api/whitelist', {
         method: 'POST',
@@ -24,14 +23,14 @@ const PhLanding = () => {
     } catch (error) {
       console.error('Hero form submission error:', error);
     }
-    
+
     setIsSubmitting(false);
   };
 
   const handleFooterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     try {
       await fetch('/api/whitelist', {
         method: 'POST',
@@ -43,7 +42,7 @@ const PhLanding = () => {
     } catch (error) {
       console.error('Footer form submission error:', error);
     }
-    
+
     setIsSubmitting(false);
   };
 
@@ -52,26 +51,26 @@ const PhLanding = () => {
       {/* Hero Section */}
       <section className="relative pt-16 pb-24 bg-gradient-to-br from-red-600 via-red-700 to-red-800 overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
-        
+
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             {/* Scarcity Badge */}
             <div className="inline-block bg-yellow-400 text-black px-4 py-2 rounded-full font-bold text-sm mb-6">
               🔥 Only 50 beta seats • 13 left
             </div>
-            
+
             {/* Main Headline */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               Stop Answering 200<br />
               WhatsApp Messages<br />
               a Day.
             </h1>
-            
+
             {/* Sub-headline */}
             <p className="text-xl md:text-2xl text-red-100 mb-8 max-w-4xl mx-auto leading-relaxed">
               Our AI turns every chat into a paid order—before you can finish your coffee.
             </p>
-            
+
             {/* Value Props */}
             <div className="flex flex-wrap justify-center gap-6 mb-12 text-white">
               <div className="flex items-center gap-2">
@@ -87,7 +86,7 @@ const PhLanding = () => {
                 <span className="font-medium">Push to Shopify</span>
               </div>
             </div>
-            
+
             {/* Hero Form */}
             <div className="max-w-md mx-auto mb-8">
               <form onSubmit={handleHeroSubmit} className="space-y-4">
@@ -107,8 +106,8 @@ const PhLanding = () => {
                   required
                   className="h-14 text-lg bg-white/95 border-white/30 focus:bg-white"
                 />
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   disabled={isSubmitting}
                   className="w-full h-14 text-lg bg-green-600 hover:bg-green-700 text-white font-bold"
                 >
@@ -116,7 +115,7 @@ const PhLanding = () => {
                 </Button>
               </form>
             </div>
-            
+
             {/* Social Proof */}
             <p className="text-red-200 text-sm">
               Loved by PH brands like <span className="font-semibold text-white">Tote&Go</span> and <span className="font-semibold text-white">GadgetLab</span>
@@ -133,7 +132,7 @@ const PhLanding = () => {
               The Hidden Cost of Slow WhatsApp Response
             </h2>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="text-center p-6 bg-red-900/30 rounded-xl border border-red-700">
               <div className="text-4xl font-bold text-red-400 mb-2">42%</div>
@@ -148,7 +147,7 @@ const PhLanding = () => {
               <p className="text-red-100">Average lost basket per missed chat</p>
             </div>
           </div>
-          
+
           {/* Chat Screenshot Mockup */}
           <div className="max-w-sm mx-auto bg-gray-800 rounded-2xl p-4 border border-red-700">
             <div className="bg-green-600 text-white p-3 rounded-lg mb-2">
@@ -193,7 +192,7 @@ const PhLanding = () => {
               </h3>
               <p className="text-gray-600">No coding required</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Clock size={32} className="text-green-600" />
@@ -204,7 +203,7 @@ const PhLanding = () => {
               </h3>
               <p className="text-gray-600">In less than 5 seconds</p>
             </div>
-            
+
             <div className="text-center">
               <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <ShoppingCart size={32} className="text-green-600" />
@@ -268,14 +267,14 @@ const PhLanding = () => {
                 required
                 className="flex-1 h-12 bg-white text-black border-0"
               />
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isSubmitting}
                 className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold h-12 px-8 whitespace-nowrap"
               >
                 {isSubmitting ? 'Processing...' : 'Claim My Spot (13 left)'}
               </Button>
-              <button 
+              <button
                 type="button"
                 onClick={() => setStickyVisible(false)}
                 className="text-red-200 hover:text-white ml-2"
